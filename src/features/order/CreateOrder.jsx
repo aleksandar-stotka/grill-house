@@ -10,12 +10,9 @@ import { formatCurrency } from '../../utils/helpers';
 import { fetchAddress } from '../user/userSlice';
 import emailjs from 'emailjs-com';
 
-
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
-  /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
-    str
-  );
+  /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(str);
 
 function CreateOrder() {
   const [withPriority, setWithPriority] = useState(false);
@@ -40,6 +37,9 @@ function CreateOrder() {
   const totalPrice = totalCartPrice + priorityPrice;
 
   if (!cart.length) return <EmptyCart />;
+
+  // Debugging cart data before submitting the form
+  console.log("Cart Data before submitting:", cart);
 
   return (
     <div className="px-4 py-6">
@@ -141,29 +141,33 @@ function CreateOrder() {
   );
 }
 
-(function() {
-  emailjs.init({
-    publicKey: 'i2jcxUyN6klyLKoVb', // Replace with your EmailJS public key
-  });
-})();
-
 // Action to handle order creation and sending email
 export async function action({ request }) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
 
+  // Debugging form data to ensure cart is included
+  console.log("Received Form Data:", data);
+
+  // Check if cart is available
+  if (!data.cart) {
+    console.error("Cart data is missing");
+    return { cart: "Cart data is missing" }; // Return an error if cart is missing
+  }
+
   const order = {
     ...data,
-    cart: JSON.parse(data.cart),
+    cart: JSON.parse(data.cart), // Parse the cart string to get the object
     priority: data.priority === 'true',
   };
 
-  console.log(order);
+  console.log("Order Data:", order);  // Debugging line to check the order object
 
   const errors = {};
-  if (!isValidPhone(order.phone))
+  if (!isValidPhone(order.phone)) {
     errors.phone =
       'Please provide us with your correct phone number. We might need it to contact you.';
+  }
 
   if (Object.keys(errors).length > 0) return errors;
 
@@ -172,7 +176,7 @@ export async function action({ request }) {
 
   // Send email notification using emailjs after order is created
   try {
-    await sendMail(order, newOrder); // Call the sendMail function here
+    sendMail(order, newOrder); // Call the sendMail function here
   } catch (error) {
     console.error('Failed to send email:', error);
   }
@@ -184,7 +188,7 @@ export async function action({ request }) {
 }
 
 // Send email function
-async function sendMail(order, newOrder) {
+function sendMail(order, newOrder) {
   const emailParams = {
     customer_name: order.customer,
     phone: order.phone,
@@ -195,17 +199,19 @@ async function sendMail(order, newOrder) {
     order_id: newOrder.id,
   };
 
-  try {
-    const result = await emailjs.send(
-      'your_service_id', // Replace with your EmailJS service ID
-      'your_template_id', // Replace with your EmailJS template ID
-      emailParams,
-      'your_user_id' // Replace with your EmailJS user ID
-    );
-    console.log('Email sent successfully:', result);
-  } catch (error) {
-    console.error('Error sending email:', error);
-  }
+  // Send email via EmailJS
+  emailjs.send("service_ftt9gs7", "template_wfhjoqw", emailParams)
+    .then((result) => {
+      console.log("Email sent successfully:", result);
+    })
+    .catch((error) => {
+      console.error("Error sending email:", error);
+    });
 }
+
+// Initialize emailjs with your public key
+(function () {
+  emailjs.init('nbS0nW_kNhiWrfjfW'); // Replace with your actual Public Key
+})();
 
 export default CreateOrder;
