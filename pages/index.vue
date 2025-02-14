@@ -33,6 +33,9 @@ onMounted(async () => {
 
     <p v-else>No heroes found</p>
     <p v-if="error">Error: {{ error }}</p>
+    <div class="bg-blue-500 text-white p-4">
+    <h1>Tailwind CSS is working!</h1>
+  </div>
   </div>
 </template>
 

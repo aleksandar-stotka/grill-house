@@ -10,7 +10,10 @@ export default defineNuxtConfig({
   ],
 
   // Optional, but useful
-  modules: ['@nuxt/devtools'],
+  modules: ['@nuxtjs/tailwindcss'], 
+  css: [
+    '@/assets/css/main.css',  // Ensure this is the path to your Tailwind CSS file
+  ],
 
   compatibilityDate: '2025-02-14'
 });
