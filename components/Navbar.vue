@@ -2,7 +2,7 @@
   <nav
     :class="[
       'fixed top-0 left-0 w-full transition-all duration-300 p-4 shadow-md flex items-center',
-      isScrolled ? 'bg-white h-12 w-4/5 mx-auto rounded-lg' : 'bg-gray-100 h-16 w-full'
+      isScrolled ? 'bg-white h-12 w-4/5 mx-auto rounded-lg' : 'bg-gray-200 h-16 w-full'
     ]"
   >
     <div class="container mx-auto flex justify-between items-center">
@@ -34,7 +34,12 @@
           <li>
             <a href="#" class="block px-4 py-2 text-gray-900 hover:text-blue-500">Home</a>
           </li>
-        
+          <li>
+            <a href="#" class="block px-4 py-2 text-gray-900 hover:text-blue-500">About</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 text-gray-900 hover:text-blue-500">Contact</a>
+          </li>
         </ul>
       </div>
     </div>
