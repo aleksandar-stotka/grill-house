@@ -3,6 +3,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       graphqlEndpoint: 'http://localhost:1337/graphql', // Change to your actual endpoint
+      API_URL: process.env.NUXT_PUBLIC_API_URL || 'http://localhost:1337',
+
     },
   },
   plugins: [

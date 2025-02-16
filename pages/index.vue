@@ -1,71 +1,16 @@
-<script setup>
-import { ref, onMounted } from 'vue';
-import { useNuxtApp } from '#app'; // To access the Apollo Client
-import { GET_HERO } from '~/apollo/heroQueries';
-
-const heroes = ref([]);
-const error = ref(null);
-const loading = ref(true)
-
-// Fetch data from GraphQL server using Apollo Client
-onMounted(async () => {
-  try {
-   
-    const { data } = await useNuxtApp().$apolloClient.query({
-      query: GET_HERO
-    });
-    heroes.value = data.heroes;
-    loading.value = false
-  } catch (err) {
-    error.value = err;
-    console.error('GraphQL Error:', error.value);
-  }
-  
-   
-});
-</script>
-
 <template>
-  <div class="container">
-    <h1>Hero Section</h1>
-    <div v-if="loading" class="spinner-container">
-      <div class="spinner"></div>
-    </div>
-    <div v-if="heroes.length" class="hero">
-      
-      <div v-for="hero in heroes" :key="hero.Grll">
-        
-          <h2>{{ hero.Grll }}</h2>
-          <img :src="`http://localhost:1337${hero.heroImage.url}`" alt="Hero Image" />  
-
-        
-      </div>
-    </div>
-
-    <p v-else>No heroes found</p>
-    <p v-if="error">Error: {{ error }}</p>
-    <div class="bg-blue-500 text-white p-4">
-    <h1>Tailwind CSS is working!</h1>
-  </div>
+  <div>
+    <Hero/>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, labore eos, ad dignissimos doloremque culpa, dolorum omnis deserunt consectetur impedit tenetur quis ab nam inventore perferendis cumque temporibus porro ipsam? Repellendus iste deserunt quaerat fugit, nemo cum eos architecto voluptas, ullam autem blanditiis, necessitatibus nesciunt laboriosam placeat iusto id! Quas, ex. Ducimus quaerat neque fuga cumque dignissimos eaque esse commodi doloribus odio. Totam in alias earum similique illo vitae quaerat corporis esse quia cupiditate? Provident sint, magni laborum magnam dicta nihil animi nisi soluta asperiores quasi fugiat pariatur autem eveniet labore veritatis culpa explicabo odit, reprehenderit, tempore maxime exercitationem eaque?ƒƒ</div>
   </div>
 </template>
 
-<style scoped>
-.container {
-  text-align: center;
-  padding: 20px;
-}
+<script>
+export default {
 
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
 }
+</script>
 
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
+<style>
+
 </style>
