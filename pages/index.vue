@@ -5,29 +5,40 @@ import { GET_HERO } from '~/apollo/heroQueries';
 
 const heroes = ref([]);
 const error = ref(null);
+const loading = ref(true)
 
 // Fetch data from GraphQL server using Apollo Client
 onMounted(async () => {
   try {
+   
     const { data } = await useNuxtApp().$apolloClient.query({
       query: GET_HERO
     });
     heroes.value = data.heroes;
+    loading.value = false
   } catch (err) {
     error.value = err;
     console.error('GraphQL Error:', error.value);
   }
+  
+   
 });
 </script>
 
 <template>
   <div class="container">
     <h1>Hero Section</h1>
-    
+    <div v-if="loading" class="spinner-container">
+      <div class="spinner"></div>
+    </div>
     <div v-if="heroes.length" class="hero">
+      
       <div v-for="hero in heroes" :key="hero.Grll">
-        <h2>{{ hero.Grll }}</h2>
-        <img :src="`http://localhost:1337${hero.heroImage.url}`" alt="Hero Image" />
+        
+          <h2>{{ hero.Grll }}</h2>
+          <img :src="`http://localhost:1337${hero.heroImage.url}`" alt="Hero Image" />  
+
+        
       </div>
     </div>
 
