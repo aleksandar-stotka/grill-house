@@ -1,15 +1,15 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import { useNuxtApp, useRuntimeConfig } from '#app'; // Access Apollo Client & Config
+import { useNuxtApp, } from '#app'; // Access Apollo Client & Config
 import { GET_HERO } from '~/apollo/heroQueries';
+import { globals  } from '~/utils/globals';
 
 const heroes = ref([]);
 const error = ref(null);
 const loading = ref(true);
 
 // Get API base URL from environment variables
-const config = useRuntimeConfig();
-const apiBaseUrl = config.public.API_URL || 'http://localhost:1337';
+const apiBaseUrl = globals.apiUrl
 
 // Fetch data from GraphQL server using Apollo Client
 onMounted(async () => {
