@@ -1,3 +1,42 @@
+<template>
+  <section class="relative grid grid-cols-1 md:grid-cols-2 items-center gap-8 p-6 md:p-12">
+    <!-- Text Content -->
+    <div class="relative z-10 text-center md:text-left">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-black">
+        DELIGHT IN EVERY BITE AT
+        <span class="text-orange-500">“SKARA HOUSE”</span>
+      </h1>
+      <p class="mt-4 text-gray-600 text-lg">
+        Lorem ipsum dolor sit amet consectetur. Sed euismod justo volutpat malesuada. 
+        Purus in pellentesque a convallis morbi convallis.
+      </p>
+      
+      <div class="mt-6 flex items-center space-x-4 justify-center md:justify-start">
+        <!-- Ingredients Icons -->
+        <div class="flex space-x-2">
+          <img src="/assets/bbq.png" alt="Icon 1" class="h-8">
+          <img src="/assets/grill.png" alt="Icon 1" class="h-8">
+          <img src="/assets/grill2.png" alt="Icon 1" class="h-8">
+          
+        </div>
+      </div>
+      
+      <button class="mt-6 bg-orange-500 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-orange-600">
+        ORDER NOW
+      </button>
+    </div>
+
+    <!-- Photo (on right side for larger screens) -->
+    <div v-if="heroes.length" class="relative">
+      <img 
+        :src="getImageUrl(heroes[0].heroImage?.url)" 
+        alt="Hero Image"
+        class="w-full h-auto rounded-lg shadow-lg"
+      />
+    </div>
+  </section>
+</template>
+
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useNuxtApp } from '#app';
@@ -31,51 +70,21 @@ const getImageUrl = (path) => {
 };
 </script>
 
-<template>
-  <div class="relative min-h-screen">
-    <!-- 🏠 Fixed Navbar -->
-   
-
-    <!-- 🌄 Fullscreen Hero Background -->
-    <div v-if="heroes.length" class="hero-background" 
-         :style="{ backgroundImage: `url(${getImageUrl(heroes[0].heroImage?.url)})` }"></div>
-
-    <!-- 📜 Main Content -->
-    <div class="relative z-10 pt-24 px-6 md:px-12 lg:px-24">
-      <h1 class="text-4xl font-extrabold text-gray-900 text-center">Hero Section</h1>
-      
-      <div v-if="loading" class="flex justify-center mt-8">
-        <div class="spinner border-t-4 border-blue-500 border-solid rounded-full w-12 h-12 animate-spin"></div>
-      </div>
-      
-      <div v-if="heroes.length" class="hero mt-8 text-center">
-        <h2 class="text-2xl font-semibold">{{ heroes[0].Grll }}</h2>
-      </div>
-
-      <p v-else class="text-center text-gray-700 mt-4">No heroes found</p>
-      <p v-if="error" class="text-red-500 text-center mt-2">Error: {{ error }}</p>
-
-      <!-- 📌 Extra Content -->
-      <div class="extra-content mt-16 p-8 bg-white shadow-md rounded-lg">
-        <p class="text-lg text-gray-800 text-center">
-          Scroll down and see how the hero image stays in the background.
-        </p>
-      </div>
-    </div>
-  </div>
-</template>
-
 <style scoped>
-/* 🌄 Hero Background Image */
-.hero-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1; /* Push behind everything */
+/* background */
+
+/* Styles to ensure the photo is on the right */
+@media (max-width: 768px) {
+  /* On small screens, the layout will be stacked, text on top and image below */
+  section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* On larger screens, the text is on the left, and image is on the right */
+  section {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 </style>
