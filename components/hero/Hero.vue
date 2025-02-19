@@ -69,7 +69,7 @@ onMounted(async () => {
 // Helper function to construct image URLs safely
 const getImageUrl = (path) => {
   return path?.startsWith('http') ? path : `${apiBaseUrl}${path}`;
-};
+};  
 </script>
 
 <style scoped>
