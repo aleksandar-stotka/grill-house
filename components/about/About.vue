@@ -50,6 +50,34 @@
       </div>
     </section>
   </template>
+  <script setup>
+  import { globals } from '#imports';
+  import { onMounted,ref } from '#imports';
+  import { useNuxtApp } from '#imports';
+import { GET_ABOUT } from '~/apollo/about/aboutQueries';
+  console.log(globals)
+  
+  
+  const apiBaseUrl = globals.apiUrl;
+
+  const aboutData = ref([])
+
+  onMounted(async () => {
+    try {
+        const {data} = await useNuxtApp().$apolloClient.query({
+        query : GET_ABOUT
+    });
+    aboutData.value = data.heroes
+    console.log(aboutData.value,"about")
+    } catch (err) {
+
+    }
+    
+
+  })
+
+
+</script>
   
   <style scoped>
   /* Ensures good mobile responsiveness */
