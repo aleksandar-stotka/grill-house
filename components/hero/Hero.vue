@@ -3,27 +3,27 @@
     <!-- Text Content -->
     <div class="relative z-10 text-center md:text-left">
       <h1 class="text-4xl md:text-5xl font-extrabold text-black">
-        DELIGHT IN EVERY BITE AT
-        <span class="text-orange-500">“SKARA HOUSE”</span>
+        {{ heroes[0]?.Grll }} 
+        <span class="text-orange-500">{{ heroes[0]?.skarahouse }}</span>
       </h1>
-      <p class="mt-4 text-gray-600 text-lg">
-        Lorem ipsum dolor sit amet consectetur. Sed euismod justo volutpat malesuada. 
-        Purus in pellentesque a convallis morbi convallis.
-      </p>
-      
+
+      <!-- Iterate over the description (structured text) -->
+      <div class="mt-4 text-gray-600 text-lg">
+        <div v-for="(block, index) in descriptionBlocks" :key="index">
+          <p v-for="(child, childIndex) in block.children" :key="childIndex">
+            {{ child.text }}
+          </p>
+        </div>
+      </div>
+
       <div class="mt-6 flex items-center space-x-4 justify-center md:justify-start">
         <!-- Ingredients Icons -->
         <div class="flex space-x-2">
           <img src="/assets/bbq.png" alt="Icon 1" class="h-8">
           <img src="/assets/grill.png" alt="Icon 1" class="h-8">
           <img src="/assets/grill2.png" alt="Icon 1" class="h-8">
-          
         </div>
       </div>
-      
-      <button class="mt-6 bg-orange-500 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-orange-600">
-        ORDER NOW
-      </button>
     </div>
 
     <!-- Photo (on right side for larger screens) -->
@@ -44,6 +44,7 @@ import { GET_HERO } from '~/apollo/heroQueries';
 import { globals } from '~/utils/globals';
 
 const heroes = ref([]);
+const descriptionBlocks = ref([]);
 const error = ref(null);
 const loading = ref(true);
 
@@ -57,6 +58,7 @@ onMounted(async () => {
       query: GET_HERO
     });
     heroes.value = data.heroes;
+    descriptionBlocks.value = data.heroes[0].description || []; // Assuming the description is in the first hero
     loading.value = false;
   } catch (err) {
     error.value = err;
