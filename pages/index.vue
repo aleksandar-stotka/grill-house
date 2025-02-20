@@ -17,6 +17,7 @@
     <div v-show="!showLogo && !showText" class="main-content">
       <Hero />
       <About />
+      <Menu/>
     </div>
   </div>
 </template>
