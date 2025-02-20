@@ -28,10 +28,14 @@
         </h2>
 
         <!-- Description -->
-        <p class="mt-4 text-gray-600 text-lg">
-          Lorem ipsum dolor sit amet consectetur. Sed euismod justo volutpat
-          malesuada. Purus in pellentesque a convallis morbi convallis.
-        </p>
+        <!-- Description -->
+<div class="mt-4 text-gray-600 text-lg">
+  <div v-for="(block, index) in descriptionBlocks" :key="index">
+    <p v-for="(child, childIndex) in block.children" :key="childIndex">
+      {{ child.text }}
+    </p>
+  </div>
+</div>
 
         <!-- Bullet Points -->
         <ul
@@ -73,16 +77,26 @@ console.log(globals);
 const apiBaseUrl = globals.apiUrl;
 
 const aboutData = ref([]);
+const descriptionBlocks = ref([]);
+
 
 onMounted(async () => {
   try {
     const { data } = await useNuxtApp().$apolloClient.query({
       query: GET_ABOUT,
     });
+
     aboutData.value = data.heroes;
+    
+    // Fix: Correctly assign the descriptionAbout
+    descriptionBlocks.value = aboutData.value[0]?.descriptionAbout || [];
+
     console.log(aboutData.value, "about");
-  } catch (err) {}
+  } catch (err) {
+    console.error("Error fetching About data:", err);
+  }
 });
+
 
 const getImageUrl = (path) => {
   return path?.startsWith("http") ? path : `${apiBaseUrl}${path}`;
