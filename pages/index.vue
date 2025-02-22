@@ -18,6 +18,7 @@
       <Hero />
       <About />
       <Menu/>
+      <Slider/>
     </div>
   </div>
 </template>
