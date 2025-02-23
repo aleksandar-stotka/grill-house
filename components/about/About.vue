@@ -7,7 +7,7 @@
       <!-- Image Section -->
       <img
         :src="getImageUrl(aboutData[0]?.aboutusImage[0]?.url)"
-        alt="About Us Image"
+        alt="About"
         class="w-full h-auto rounded-lg shadow-lg"
       />
 
