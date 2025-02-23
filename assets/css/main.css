@@ -20,4 +20,16 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
+  
+  body {
+    font-family: "Barlow", serif;
+  font-weight: 200;
+  font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+  }
+  
   
