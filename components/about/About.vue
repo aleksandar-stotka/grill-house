@@ -37,23 +37,7 @@
   </div>
 </div>
 
-        <!-- Bullet Points -->
-        <ul
-          class="mt-6 space-y-2 md:space-y-0 md:flex md:space-x-6 text-gray-800 font-semibold"
-        >
-          <li class="flex items-center space-x-2">
-            <span class="text-orange-500">•</span> Locally-Sourced Beef
-          </li>
-          <li class="flex items-center space-x-2">
-            <span class="text-orange-500">•</span> Organic Ingredients
-          </li>
-          <li class="flex items-center space-x-2">
-            <span class="text-orange-500">•</span> Sustainable Practices
-          </li>
-          <li class="flex items-center space-x-2">
-            <span class="text-orange-500">•</span> Custom Blend
-          </li>
-        </ul>
+     
 
         <!-- Button -->
         <div class="mt-6">
