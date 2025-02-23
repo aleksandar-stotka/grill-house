@@ -1,6 +1,6 @@
 import { gql } from 'graphql-tag';
 
-export const GET_HERO = gql`
+export const GET_SLIDES = gql`
  query getSlide {
  sliders {
   cardtext

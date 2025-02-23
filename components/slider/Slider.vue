@@ -2,12 +2,17 @@
     <div class="relative w-full max-w-7xl mx-auto overflow-hidden">
       <div class="flex transition-transform duration-300 ease-in-out"
            :style="{ transform: `translateX(-${currentIndex * (100 / visibleCount)}%)` }">
-        <div v-for="(photo, index) in photos" :key="index" 
+        <div v-for="(slide, index) in slides" :key="index"
              :class="`flex-shrink-0 p-6 ${imageWidth}`">
-          <img :src="photo" class="w-full h-auto max-h-96 object-cover rounded-lg shadow-lg" alt="Slider Image">
+          <img :src="getImageUrl(slide.cardimage?.url) || '/path/to/fallback-image.jpg'"
+               class="w-full h-auto max-h-96 object-cover rounded-lg shadow-lg"
+               alt="Slide Image">
+          <div class="text-center mt-2">
+            <h3 class="text-2xl font-bold">{{ slide.cardtext }}</h3>
+          </div>
         </div>
       </div>
-      
+  
       <button @click="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-green-800 text-white p-4 rounded-full shadow-md">
         &#9665;
       </button>
@@ -17,54 +22,56 @@
     </div>
   </template>
   
-  <script>
+  <script setup>
+  import { ref, computed, onMounted, onUnmounted } from 'vue';
+  import { useNuxtApp } from '#imports';
+  import { GET_SLIDES } from '~/apollo/slidermenu/sliderQueries';
+  import { globals } from '#imports';
   
-  export default {
-    data() {
-      return {
-        photos: [
-          'https://via.placeholder.com/600?text=1',
-          'https://via.placeholder.com/600?text=2',
-          'https://via.placeholder.com/600?text=3',
-          'https://via.placeholder.com/600?text=4',
-          'https://via.placeholder.com/600?text=5',
-          'https://via.placeholder.com/600?text=6',
-          'https://via.placeholder.com/600?text=7',
-          'https://via.placeholder.com/600?text=8',
-          'https://via.placeholder.com/600?text=9',
-        ],
-        currentIndex: 0,
-        visibleCount: window.innerWidth < 640 ? 1 : 4
-      };
-    },
-    computed: {
-      maxIndex() {
-        return Math.ceil(this.photos.length / this.visibleCount) - 1;
-      },
-      imageWidth() {
-        return this.visibleCount === 1 ? 'w-full' : 'w-1/4';
-      }
-    },
-    methods: {
-      next() {
-        this.currentIndex = (this.currentIndex < this.maxIndex) ? this.currentIndex + 1 : 0;
-      },
-      prev() {
-        this.currentIndex = (this.currentIndex > 0) ? this.currentIndex - 1 : this.maxIndex;
-      },
-      updateVisibleCount() {
-        this.visibleCount = window.innerWidth < 640 ? 1 : 4;
-      }
-    },
-    mounted() {
-      this.updateVisibleCount();
-      window.addEventListener('resize', this.updateVisibleCount);
-      setInterval(this.next, 2000);
-    },
-    beforeDestroy() {
-      window.removeEventListener('resize', this.updateVisibleCount);
-    }
+  const slides = ref([]);
+  const currentIndex = ref(0);
+  const visibleCount = ref(4);
+  const apiBaseUrl = globals.apiUrl;
+  
+  const getImageUrl = (path) => {
+    return path?.startsWith('http') ? path : `${apiBaseUrl}${path}`;
   };
+  
+  // Dynamically calculate image width based on visible count and screen size
+  const imageWidth = computed(() => {
+    if (window.innerWidth < 640) {
+      return 'w-full';  // Full width on mobile screens
+    }
+    return `w-${Math.floor(100 / visibleCount.value)}%`;  // Adjust based on visible count
+  });
+  
+  const updateVisibleCount = () => {
+    visibleCount.value = window.innerWidth < 640 ? 1 : 4;
+  };
+  
+  const next = () => {
+    currentIndex.value = (currentIndex.value + 1) % slides.value.length;
+  };
+  
+  const prev = () => {
+    currentIndex.value = (currentIndex.value - 1 + slides.value.length) % slides.value.length;
+  };
+  
+  onMounted(async () => {
+    try {
+      const { data } = await useNuxtApp().$apolloClient.query({ query: GET_SLIDES });
+      slides.value = data.sliders;
+    } catch (error) {
+      console.error("Error fetching slides:", error);
+    }
+    updateVisibleCount();
+    window.addEventListener('resize', updateVisibleCount);
+    setInterval(next, 2000);
+  });
+  
+  onUnmounted(() => {
+    window.removeEventListener('resize', updateVisibleCount);
+  });
   </script>
   
   <style scoped>

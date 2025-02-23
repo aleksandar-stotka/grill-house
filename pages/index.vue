@@ -96,10 +96,5 @@ onMounted(() => {
 }
 
 /* Main Content */
-.main-content {
-  min-height: 100vh;
-  background-image: url('@/assets/background.jpg'); /* Adjust background */
-  background-size: cover;
-  background-position: center;
-}
+
 </style>
