@@ -8,7 +8,7 @@
                class="w-full h-auto max-h-96 object-cover rounded-lg shadow-lg"
                alt="Slide Image">
           <div class="text-center mt-2">
-            <h3 class="text-2xl font-bold">{{ slide.cardtext }}</h3>
+            <h3 class="text-2xl font-bold text-green-700">{{ slide.cardtext }}</h3>
           </div>
         </div>
       </div>

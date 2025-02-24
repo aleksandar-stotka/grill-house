@@ -15,21 +15,18 @@
       <div class="text-center md:text-left">
         <!-- Label -->
         <span
-          class="bg-[#a23c6e] text-white text-xs uppercase font-semibold px-3 py-1 rounded-full"
+          class="bg-[#a23c6e] text-white text-lg uppercase font-semibold px-3 py-1 rounded-full"
         >
           About Us
         </span>
 
         <!-- Heading -->
-        <h2
-          class="mt-4 text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight"
-        >
-          {{ aboutData[0]?.abouttext }} <br class="hidden md:block" />
-        </h2>
+      
 
         <!-- Description -->
         <!-- Description -->
-<div class="mt-4 text-gray-600 text-lg">
+<div class="mt-4 text-gray-600 text-2xl
+">
   <div v-for="(block, index) in descriptionBlocks" :key="index">
     <p v-for="(child, childIndex) in block.children" :key="childIndex">
       {{ child.text }}
@@ -41,11 +38,11 @@
 
         <!-- Button -->
         <div class="mt-6">
-          <button
+          <NuxtLink to="/aboutUs"
             class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition"
           >
             Learn More
-          </button>
+          </NuxtLink>
         </div>
       </div>
     </div>
