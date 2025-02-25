@@ -2,7 +2,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       graphqlEndpoint: process.env.NUXT_PUBLIC_GRAPHQL_URL || 'http://localhost:1337/graphql',
-      API_URL: process.env.NUXT_PUBLIC_API_URL || 'http://localhost:1337',
+      API_URL: process.env.NUXT_PUBLIC_API_URL || 'https://mygrillhouse.netlify.app/',
     },
   },
   plugins: [
