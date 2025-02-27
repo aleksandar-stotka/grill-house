@@ -8,8 +8,8 @@
         <div>
           <h2 class="text-lg font-bold text-orange-400">INFORMATION</h2>
           <p class="mt-2">Address- 17 Beltana Avenue, Bonnyirgg</p>
-          <p>Call us now: 0123-456-789</p>
-          <p>Email: sales@yourcompany.com</p>
+          <p>Call us now: - 0419024034, 0405130887</p>
+          <p>Email: skarahouse01@gmail.com</p>
         </div>
 
         <!-- Logo and Tagline -->
@@ -17,9 +17,7 @@
           <h1 class="text-2xl font-bold">
             Skara <span class="text-orange-400">House</span>
           </h1>
-          <p class="mt-2 text-sm max-w-md">
-            Sed ut perspiciatis unde omnis iste natus error accusantium doloremque laudantium.
-          </p>
+         
           <!-- Social Icons -->
           <div class="flex space-x-4 mt-4">
             <a href="https://www.facebook.com/profile.php?id=61573204824323" class="text-xl hover:text-orange-400"><i class="fab fa-facebook-f"></i></a>
@@ -39,7 +37,7 @@
 
       <!-- Copyright Text -->
       <div class="mt-10 text-center text-sm">
-        <p>&copy; 2024 All Rights Reserved. Designed & Developed by <span class="text-orange-400">UIPARADOX</span>.</p>
+        <p>&copy; 2025 All Rights Reserved. Designed & Developed by <span class="text-orange-400">Aleksandar</span>.</p>
       </div>
     </div>
   </footer>
