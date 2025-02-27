@@ -12,5 +12,12 @@ export default defineNuxtConfig({
   css: [
     '@/assets/css/main.css',
   ],
-  compatibilityDate: '2025-02-14'
+  compatibilityDate: '2025-02-14',
+  theme: {
+    extend: {
+      fontFamily: {
+        barlow: ["Barlow", "sans-serif"],
+      },
+    },
+  },
 });
