@@ -7,7 +7,7 @@
         <!-- Information Section -->
         <div>
           <h2 class="text-lg font-bold text-orange-400">INFORMATION</h2>
-          <p class="mt-2">3910 S, Magna, UT, United States</p>
+          <p class="mt-2">Address- 17 Beltana Avenue, Bonnyirgg</p>
           <p>Call us now: 0123-456-789</p>
           <p>Email: sales@yourcompany.com</p>
         </div>
@@ -22,19 +22,18 @@
           </p>
           <!-- Social Icons -->
           <div class="flex space-x-4 mt-4">
-            <a href="#" class="text-xl hover:text-orange-400"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-xl hover:text-orange-400"><i class="fab fa-x-twitter"></i></a>
-            <a href="#" class="text-xl hover:text-orange-400"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-xl hover:text-orange-400"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61573204824323" class="text-xl hover:text-orange-400"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.ubereats.com/au/store/skara-house/e3MKaL3SXpaKDyq3ZbnUJQ?ps=1" class="text-xl hover:text-orange-400"><i class="fab fa-uber"></i></a>
+            <a href="https://www.instagram.com/skara.house/" class="text-xl hover:text-orange-400"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@skara_house?_t=ZS-8uCt8PVYwSX&_r=1" class="text-xl hover:text-orange-400"><i class="fab fa-tiktok"></i></a>
           </div>
         </div>
 
         <!-- Working Hours -->
         <div>
           <h2 class="text-lg font-bold text-orange-400">WORKING HOURS</h2>
-          <p class="mt-2">Monday - Friday: 08:00 am - 12:00 pm</p>
-          <p>Saturday: 10:00 am - 03:00 pm</p>
-          <p>Sunday: 12:00 pm - 05:00 pm</p>
+          <p class="mt-2">11am to 9pm! Tuesday Closed</p>
+          
         </div>
       </div>
 

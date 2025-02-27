@@ -5,13 +5,13 @@
           
           <!-- Google Map Embed -->
           <div class="w-full h-80 md:h-96">
-            <iframe 
-              class="w-full h-full rounded-lg shadow-md"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093706!2d144.95373531531888!3d-37.81627974202153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5774bff0f77d870!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1644546743487!5m2!1sen!2sus" 
-              allowfullscreen="" 
-              loading="lazy">
-            </iframe>
-          </div>
+    <iframe 
+      class="w-full h-full rounded-lg shadow-md"
+      :src="mapUrl"
+      allowfullscreen 
+      loading="lazy">
+    </iframe>
+  </div>
   
           <!-- Contact Information -->
           <div class="bg-white p-6 shadow-lg rounded-lg">
@@ -22,17 +22,18 @@
   
             <div class="mt-4">
               <h3 class="font-semibold text-lg">📍 Shop Location:</h3>
-              <p class="text-gray-700">808 Vale Street, Bay Magna, USA</p>
+              <p class="text-gray-700">17 Beltana Avenue, Bonnyrigg, NSW 2177
+              </p>
             </div>
   
             <div class="mt-4">
-              <h3 class="font-semibold text-lg">📞 Phone Number:</h3>
-              <p class="text-gray-700">+001 123 456 789, +002 321 654 987</p>
+              <h3 class="font-semibold text-lg">📞 Phone Numbers:</h3>
+              <p class="text-gray-700">- 0419024034, 0405130887</p>
             </div>
   
             <div class="mt-4">
               <h3 class="font-semibold text-lg">📧 Email Address:</h3>
-              <p class="text-gray-700">exampleinfo@gmail.com</p>
+              <p class="text-gray-700">skarahouse01@gmail.com</p>
             </div>
           </div>
   
@@ -42,5 +43,11 @@
   </template>
   
   <script setup>
+  import { computed } from 'vue';
+
+  const mapUrl = "https://www.google.com/maps/embed?pb=!4v1641234567890!6m8!1m7!1sNCUXQroY3NlTx-6rwWfThg!2m2!1d0!2d0!3f191.33861!4f0!5f0.7820865974627469";
+
+
+// Generate Google Maps URL dynamically
   </script>
   
