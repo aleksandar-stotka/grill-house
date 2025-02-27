@@ -8,7 +8,7 @@
       <img
         :src="getImageUrl(aboutData[0]?.aboutusImage[0]?.url)"
         alt="About"
-        class="w-full h-auto rounded-lg shadow-lg"
+        class="w-full h-auto "
       />
 
       <!-- Text Content -->

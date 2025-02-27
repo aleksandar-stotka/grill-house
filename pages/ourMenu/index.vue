@@ -12,7 +12,7 @@
 
       <!-- Text Content -->
       <div class="mt-14">
-        <h2 class="text-2xl font-bold transition-colors duration-300 group-hover:text-custom-orange">
+        <h2 class="text-2xl font-black transition-colors duration-300 group-hover:text-custom-orange">
           {{ burger.name }}
         </h2>
         <p class="mt-2 text-gray-600 text-sm transition-colors duration-300 group-hover:text-white">

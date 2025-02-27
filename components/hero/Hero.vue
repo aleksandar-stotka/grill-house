@@ -27,15 +27,16 @@
     </div>
 
     <!-- Photo (on right side for larger screens) -->
-    <div v-if="heroes.length" class="relative">
+    <div v-if="heroes.length" class="relative flex justify-center">
       <img 
         :src="getImageUrl(heroes[0].heroImage?.url)" 
         alt="Hero Image"
-        class="w-full h-auto rounded-lg shadow-lg"
+        class="w-full max-w-[450px] h-auto rounded-lg shadow-lg md:max-w-[500px]"
       />
     </div>
   </section>
 </template>
+
 
 <script setup>
 import { ref, onMounted } from 'vue';

@@ -15,7 +15,7 @@
         <!-- Logo and Tagline -->
         <div class="flex flex-col items-center">
           <h1 class="text-2xl font-bold">
-            Savory <span class="text-orange-400">Bites</span>
+            Skara <span class="text-orange-400">House</span>
           </h1>
           <p class="mt-2 text-sm max-w-md">
             Sed ut perspiciatis unde omnis iste natus error accusantium doloremque laudantium.
