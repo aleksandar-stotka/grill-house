@@ -7,7 +7,7 @@ import { gql } from 'graphql-tag';
 
 const GET_CATEGORY = gql`
 query getCategory($id: ID!) {
-    categories(id:$ id) {
+    category(id:$ id) {
        name
        documentId
        grillmenus {
