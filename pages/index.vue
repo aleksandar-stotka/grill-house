@@ -15,6 +15,7 @@
 
     <!-- Main Content -->
     <div v-show="!showLogo && !showText" class="main-content">
+      
       <Hero />
       <About />
       <Slider/>
