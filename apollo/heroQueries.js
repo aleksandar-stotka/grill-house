@@ -5,7 +5,7 @@ export const GET_HERO = gql`
     heroes {
     skarahouse
       description
-      Grll
+      Grill
       heroImage {
         url
       }

@@ -3,7 +3,7 @@
     <!-- Text Content -->
     <div class="relative z-10 text-center md:text-left">
       <h1 class="text-4xl md:text-5xl font-extrabold text-black">
-        {{ heroes[0]?.Grll }} 
+        {{ heroes[0]?.Grill }}  
         <span class="text-orange-500">{{ heroes[0]?.skarahouse }}</span>
       </h1>
 

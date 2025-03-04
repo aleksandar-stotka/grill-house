@@ -1,6 +1,6 @@
 <template>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-10">
-
+    <SideHeader/>
     <div 
       v-for="(burger, index) in menu" 
       :key="index"
@@ -32,11 +32,6 @@ import { ref, onMounted } from 'vue';
 import { useNuxtApp } from '#app';
 import { GET_MEIN_MENU } from '~/apollo/mainMenu/mainMenuQueries';
 import { globals } from '#imports';
-import MenuHeader from '~/components/menuHeader/menuHeader.vue';
-
-
-const route = useRoute()
-console.log(route.params.id)
 
 const apiBaseUrl = globals.apiUrl;
 const menu = ref([]);

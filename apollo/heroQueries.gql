@@ -1,0 +1,14 @@
+query GetHero {
+  heroes {
+    Grll
+    skarahouse
+    description {
+      children {
+        text
+      }
+    }
+    heroImage {
+      url
+    }
+  }
+}
