@@ -7,9 +7,9 @@
         <p class="text-lg mb-4">
           {{ menusData[0]?.menudescription }}
         </p>
-        <button class="bg-black text-white font-extrabold py-1 px-4 md:py-2 md:px-6 text-sm md:text-base rounded-md hover:bg-gray-800">
+        <NuxtLink :to="`/category/${id}`" class="bg-black text-white font-extrabold py-1 px-4 md:py-2 md:px-6 text-sm md:text-base rounded-md hover:bg-gray-800">
           VIEW MENU
-        </button>
+        </NuxtLink>
       </div>
       <div class="md:w-1/2 mt-6 md:mt-0">
         <img :src="getImageUrl(menusData[0]?.menuimage?.url)" alt="menuimage" class="w-full h-auto object-cover rounded-lg" />
