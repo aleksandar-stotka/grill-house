@@ -1,10 +1,10 @@
 <template>
     <div>
-      <div v-if="loading">Loading categories...</div>
+      <div v-if="loading"></div>
       <div v-else-if="error">Error: {{ error.message }}</div>
       <div v-else>
         <div v-for="cat in categoriesData" :key="cat.id">
-          <NuxtLink :to="`/ourMenu/${cat.id}`" class="category-link">
+          <NuxtLink :to="`/category/${cat.id}`" class="category-link">
             <h1>{{ cat.name || 'Unnamed Category' }}</h1>
           </NuxtLink>
         </div>
@@ -30,10 +30,8 @@
       console.log("GraphQL Response:", data); // ✅ Debugging
   
       // ✅ Fix: Extract correct Strapi v4 structure
-      categoriesData.value = data.categories?.data?.map(cat => ({
-        id: cat.id,
-        name: cat.attributes?.name || "No Name",
-      })) || [];
+      categoriesData.value = data.categories  
+       
   
     } catch (err) {
       console.error("GraphQL Error:", err);
