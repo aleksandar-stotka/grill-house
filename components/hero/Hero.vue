@@ -23,7 +23,16 @@
           <img src="/assets/grill.png" alt="Icon 1" class="h-8">
           <img src="/assets/grill2.png" alt="Icon 1" class="h-8">
         </div>
+       
       </div>
+        
+        <div class="flex space-x-4 mt-4">
+          <a href="https://www.ubereats.com/au/store/skara-house/e3MKaL3SXpaKDyq3ZbnUJQ?ps=1" class="text-xl hover:text-orange-400"><span class="font-extrabold">Uber Eats</span></a>
+
+            <a href="https://www.facebook.com/profile.php?id=61573204824323" class="text-xl hover:text-orange-400"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/skara.house/" class="text-xl hover:text-orange-400"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@skara_house?_t=ZS-8uCt8PVYwSX&_r=1" class="text-xl hover:text-orange-400"><i class="fab fa-tiktok"></i></a>
+          </div>
     </div>
 
     <!-- Photo (on right side for larger screens) -->

@@ -1,27 +1,31 @@
 <template>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-10">
+  <div class="bg-black text-white min-h-screen p-10">
+    <!-- Header -->
+    <div class="text-center text-orange-600 text-5xl font-extrabold tracking-wide uppercase">
+      SKARA<span class="block text-red-700">HOUSE</span>
+    </div>
+    <div class="text-right text-white text-sm mt-2">OPEN 11AM - 9PM <br> WE CATER!</div>
     
-    <div 
-      v-for="(burger, index) in menu" 
-      :key="index"
-      class="relative bg-white border border-black rounded-lg p-6 text-center transition-all duration-300 hover:bg-custom-pink hover:scale-105 hover:h-[310px] h-[300px] group"
-    >
-      <!-- Burger Image (slightly outside the card, no visible border) -->
-      <div class="absolute -top-12 left-1/2 transform -translate-x-1/2 w-32 h-32 overflow-hidden">
-        <img :src="getImageUrl(burger.grillmenuimage.url)" :alt="burger.productname" class="w-full h-full object-cover rounded-full">
-      </div>
+    <!-- Menu Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      <div v-for="(burger, index) in menu" :key="index" class="relative bg-gray-900 border border-orange-600 rounded-lg p-6 text-center transition-all duration-300 hover:bg-orange-700 hover:scale-105 group">
+        <!-- Burger Image -->
+        <div class="absolute -top-12 left-1/2 transform -translate-x-1/2 w-32 h-32 overflow-hidden">
+          <img :src="getImageUrl(burger.grillmenuimage.url)" :alt="burger.productname" class="w-full h-full object-cover rounded-full border-4 border-orange-600">
+        </div>
 
-      <!-- Text Content -->
-      <div class="mt-14">
-        <h2 class="text-2xl font-black transition-colors duration-300 group-hover:text-custom-orange">
-          {{ burger.productname }}
-        </h2>
-        <p class="mt-2 text-gray-600 text-sm transition-colors duration-300 group-hover:text-white">
-          {{ burger.grildescription }}
-        </p>
-        <p class="mt-3 text-lg font-bold transition-colors duration-300 group-hover:text-white">
-          ${{ burger.price }}
-        </p>
+        <!-- Text Content -->
+        <div class="mt-14">
+          <h2 class="text-2xl font-black text-orange-500 transition-colors duration-300 group-hover:text-white uppercase">
+            {{ burger.productname }}
+          </h2>
+          <p class="mt-2 text-gray-400 text-sm transition-colors duration-300 group-hover:text-white">
+            {{ burger.grildescription }}
+          </p>
+          <p class="mt-3 text-lg font-bold text-orange-500 transition-colors duration-300 group-hover:text-white">
+            ${{ burger.price }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -55,15 +59,7 @@ const getImageUrl = (path) => {
 </script>
 
 <style scoped>
-@media (max-width: 768px) {
-  section {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 1024px) {
-  section {
-    grid-template-columns: 1fr 1fr;
-  }
+body {
+  font-family: 'Arial', sans-serif;
 }
 </style>
