@@ -12,6 +12,10 @@ export default defineNuxtConfig({
   css: [
     '@/assets/css/main.css',
   ],
+  pageTransition: {
+    name: 'page', // Name of the transition
+    mode: 'out-in', // This ensures that the outgoing page fades out before the new page fades in
+  },
   compatibilityDate: '2025-02-14',
   theme: {
     extend: {

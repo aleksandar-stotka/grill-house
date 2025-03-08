@@ -14,14 +14,14 @@
     </transition>
 
     <!-- Main Content -->
-    <div v-show="!showLogo && !showText" class="main-content">
-      
-      <Hero />
-      <About />
-      <Slider/>
-      <Menu/>
-     
-    </div>
+    <transition name="fade-content">
+      <div v-if="!showLogo && !showText" class="main-content">
+        <Hero />
+        <About />
+        <Slider />
+        <Menu />
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -29,18 +29,16 @@
 import { ref, onMounted } from 'vue';
 
 const showLogo = ref(true);
-const showText = ref(false);
 
 onMounted(() => {
   // Show logo for 2 seconds, then show text
   setTimeout(() => {
     showLogo.value = false;  // Hide logo
-    showText.value = true;   // Show text
   }, 2000);
 
-  // After text shows, hide the text after 2 more seconds
+  
   setTimeout(() => {
-    showText.value = false; // Hide text after 2 seconds
+    showText.value = false; 
   }, 4000);
 });
 </script>
@@ -89,7 +87,7 @@ onMounted(() => {
   color: black;
 }
 
-/* Fade Transition */
+/* Fade Transition for Logo and Text */
 .fade-enter-active, .fade-leave-active {
   transition: opacity 1s ease-out;
 }
@@ -97,6 +95,17 @@ onMounted(() => {
   opacity: 0;
 }
 
-/* Main Content */
+/* Fade Transition for Main Content */
+.fade-content-enter-active, .fade-content-leave-active {
+  transition: opacity 1s ease-out;
+}
+.fade-content-enter, .fade-content-leave-to {
+  opacity: 0;
+}
 
+/* Main Content Styling */
+.main-content {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
 </style>
