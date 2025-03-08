@@ -7,7 +7,7 @@
         <p class="text-lg mb-4">
           {{ menusData[0]?.menudescription }}
         </p>
-        <NuxtLink to="/catgory" class="bg-black text-white font-extrabold py-1 px-4 md:py-2 md:px-6 text-sm md:text-base rounded-md hover:bg-gray-800">
+        <NuxtLink to="/ourMenu" class="bg-black text-white font-extrabold py-1 px-4 md:py-2 md:px-6 text-sm md:text-base rounded-md hover:bg-gray-800">
           VIEW MENU
         </NuxtLink>
       </div>

@@ -7,7 +7,7 @@
       <div class="w-full lg:w-2/4 flex flex-col items-center">
           <h1 class="font-bold text-3xl md:text-3xl lg:text-5xl leading-tight text-center">Best Quality <br> Ingredients</h1>
           <img :src="getImageUrl(ingData[0]?.image?.url)" alt="Ingredient Image" class="w-80 md:w-96 lg:w-[500px] mt-4 rounded-lg" />
-          <button class="bg-blue-500 text-white py-2 px-4 md:py-3 md:px-6 text-lg md:text-2xl tracking-wide mt-4 rounded-lg">VIEW MENU</button>
+          <NuxtLink to="/ourMenu" class="bg-blue-500 text-white py-2 px-4 md:py-3 md:px-6 text-lg md:text-2xl tracking-wide mt-4 rounded-lg">VIEW MENU</NuxtLink>
           <h1 class="font-bold text-2xl md:text-4xl lg:text-5xl mt-6 text-center p-3">Customers Favorite</h1>
       </div>
   

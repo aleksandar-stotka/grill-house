@@ -7,18 +7,16 @@
       </div>
     </transition>
 
-    <transition name="fade">
-      <div v-if="showText" class="show-text font-bold">
-        <span class="orange">Perfectly Grilled</span> <span class="black">Every Time</span>
-      </div>
-    </transition>
+   
 
     <!-- Main Content -->
     <transition name="fade-content">
-      <div v-if="!showLogo && !showText" class="main-content">
+      <div v-if="!showLogo" class="main-content">
         <Hero />
         <About />
+        <Ingredients/>
         <Slider />
+        
         <Menu />
       </div>
     </transition>
@@ -36,10 +34,7 @@ onMounted(() => {
     showLogo.value = false;  // Hide logo
   }, 2000);
 
-  
-  setTimeout(() => {
-    showText.value = false; 
-  }, 4000);
+
 });
 </script>
 
