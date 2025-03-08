@@ -1,3 +1,4 @@
+
 <template>
   <nav>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,12 +10,12 @@
           </h2>
         </div>
         <div class="hidden md:flex space-x-6 items-center text-black font-semibold" style="font-family: 'Poppins', sans-serif;">
-          <a v-for="(link, index) in links" :key="index" :href="link.href" 
+          <NuxtLink v-for="(link, index) in links" :key="index" :to="link.to"
             :class="{'text-orange-500': activeLink === link.name, 'hover:text-orange-400': activeLink !== link.name}"
             @click="setActiveLink(link.name)"
             class="px-3 py-2 rounded-md text-lg">
             {{ link.name }}
-          </a>
+          </NuxtLink>
         </div>
         <!-- Mobile Menu Button -->
         <div class="md:hidden flex items-center">
@@ -32,12 +33,12 @@
     <!-- Mobile Menu -->
     <div v-if="isMobileMenuOpen" class="md:hidden bg-white shadow-md">
       <div class="px-2 pt-2 pb-3 space-y-1">
-        <a v-for="(link, index) in links" :key="index" :href="link.href" 
+        <NuxtLink v-for="(link, index) in links" :key="index" :to="link.to"
           :class="{'text-orange-500': activeLink === link.name, 'hover:text-orange-400': activeLink !== link.name}"
           @click="setActiveLink(link.name); isMobileMenuOpen = false"
           class="block px-3 py-2 rounded-md text-lg">
           {{ link.name }}
-        </a>
+        </NuxtLink>
       </div>
     </div>
   </nav>
@@ -47,11 +48,9 @@
 import { ref } from 'vue';
 
 const links = ref([
-  { name: 'HOME', href: '#' },
-  { name: 'SHOP', href: '#' },
-  { name: 'MENU', href: '#' },
-  { name: 'PAGES', href: '#' },
-  { name: 'CONTACT US', href: '#' }
+  { name: 'HOME', to: '/' },
+  { name: 'MENU', to: '/ourMenu' },
+  { name: 'CONTACT US', to: '/contact' }
 ]);
 
 const activeLink = ref('HOME');
