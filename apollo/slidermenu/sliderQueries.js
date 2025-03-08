@@ -12,3 +12,4 @@ export const GET_SLIDES = gql`
  
 }
 `;
+  
