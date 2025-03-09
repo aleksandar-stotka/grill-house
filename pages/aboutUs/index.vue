@@ -12,6 +12,7 @@
       <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-8 md:gap-12 mt-6">
         <!-- Image Section -->
         <div class="w-full lg:w-1/2 flex justify-center">
+          <h1>{{ aboutusData[0]?.text }}</h1>
           <img v-if="aboutusData.length > 0" 
                :src="getImageUrl(aboutusData[0].burgerphoto.url)" 
                alt="Deconstructed Burger" 
@@ -31,7 +32,6 @@
             <li class="flex items-center gap-1 md:gap-2"><span class="text-green-500">✔</span> Sustainable Practices</li>
             <li class="flex items-center gap-1 md:gap-2"><span class="text-green-500">✔</span> Custom Blend</li>
           </ul>
-          
           <!-- Owner Info -->
           <div class="mt-4 md:mt-6 flex items-center gap-3 md:gap-4">
             <img v-if="aboutusData.length > 0" 

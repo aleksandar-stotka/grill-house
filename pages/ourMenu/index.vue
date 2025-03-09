@@ -44,13 +44,16 @@ const menu = ref([]);
 onMounted(async () => {
   try {
     const { data } = await useNuxtApp().$apolloClient.query({
-      query: GET_MEIN_MENU
+      query: GET_MEIN_MENU,
+      fetchPolicy: 'no-cache' // Ensures fresh data from Strapi
     });
     menu.value = data.grillmenus;
+    console.log('Fetched menu:', menu.value);
   } catch (err) {
     console.error('GraphQL Error:', err);
   }
 });
+
 
 // Helper function to construct image URLs safely
 const getImageUrl = (path) => {
@@ -60,6 +63,6 @@ const getImageUrl = (path) => {
 
 <style scoped>
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Arial',   sans-serif;
 }
 </style>

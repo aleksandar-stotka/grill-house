@@ -35,6 +35,10 @@
               <h3 class="font-semibold text-lg">📧 Email Address:</h3>
               <p class="text-gray-700">skarahouse01@gmail.com</p>
             </div>
+            <div class="mt-4">
+              <a href="https://www.ubereats.com/au/store/skara-house/e3MKaL3SXpaKDyq3ZbnUJQ?ps=1" class="text-xl hover:text-orange-400"><span class="font-extrabold">          <img src="/assets/uberLogo.svg" alt="Icon 1" class="h-8">
+              </span></a>
+            </div>
           </div>
   
         </div>
