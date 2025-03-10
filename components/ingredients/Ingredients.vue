@@ -17,17 +17,6 @@
           class="w-80 md:w-96 lg:w-[500px] mt-4 rounded-lg"
         />
       </div>
-      <video
-        controls
-        autoplay
-        loop
-        muted
-        playsinline
-        class="w-80 md:w-96 lg:w-[500px] mt-4 rounded-lg"
-      >
-        <source :src="getVideoUrl(ingData[0]?.video?.url)" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
 
       <!-- View Menu Button -->
       <NuxtLink
@@ -71,12 +60,7 @@ onMounted(async () => {
 const getImageUrl = (path) => {
   return path?.startsWith("http") ? path : `${apiBaseUrl}${path}`;
 };
-const getVideoUrl = (path) => {
-  if (!path) return "";
-  const finalUrl = path.startsWith("http") ? path : `${globals.apiUrl}${path}`;
-  console.log("Final Video URL:", finalUrl); // Debug output
-  return finalUrl;
-};
+
 
 console.log(getVideoUrl(ingData[0]?.video?.url));
 </script>
