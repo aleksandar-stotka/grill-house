@@ -8,8 +8,12 @@ query getIngredients {
     image {
       url
     }
+    video {
+      url
+    }
     footerText
   }
+  
 }
 `;
   

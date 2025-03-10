@@ -61,7 +61,7 @@ import { globals } from '#imports';
 const apiBaseUrl = globals.apiUrl;
 const aboutusData = ref([]);
 const heroImage = ref(''); // Store hero image URL
-
+const loading = ref(true)
 // Fetch data from GraphQL server using Apollo Client
 onMounted(async () => {
   try {
