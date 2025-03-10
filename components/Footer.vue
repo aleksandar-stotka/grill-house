@@ -8,7 +8,11 @@
         <div>
           <h2 class="text-lg font-bold text-orange-400">INFORMATION</h2>
           <p class="mt-2">Address- 17 Beltana Avenue, Bonnyirgg</p>
-          <p>Call us now: - 0419024034, 0405130887</p>
+          <p>
+  Call us now: 
+  <a href="tel:+61419024034">0419 024 034</a>, 
+  <a href="tel:+61405130887">0405 130 887</a>
+</p>
           <p>Email: skarahouse01@gmail.com</p>
         </div>
 
