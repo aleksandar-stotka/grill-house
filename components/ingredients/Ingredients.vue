@@ -62,7 +62,6 @@ const getImageUrl = (path) => {
 };
 
 
-console.log(getVideoUrl(ingData[0]?.video?.url));
 </script>
   
   <style>
