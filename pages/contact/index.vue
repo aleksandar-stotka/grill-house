@@ -28,7 +28,11 @@
   
             <div class="mt-4">
               <h3 class="font-semibold text-lg">📞 Phone Numbers:</h3>
-              <p class="text-gray-700">- 0419024034, 0405130887</p>
+              <p>
+  Call us now: 
+  <a href="tel:+61419024034">0419 024 034</a>, 
+  <a href="tel:+61405130887">0405 130 887</a>
+</p>
             </div>
   
             <div class="mt-4">
