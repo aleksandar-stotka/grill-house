@@ -34,7 +34,10 @@ onMounted(() => {
     showLogo.value = false;  // Hide logo
   }, 2000);
 
-
+  
+  setTimeout(() => {
+    showText.value = false; 
+  }, 4000);
 });
 </script>
 
