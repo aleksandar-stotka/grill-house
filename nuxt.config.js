@@ -30,5 +30,9 @@ export default defineNuxtConfig({
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/assets/logo' }
     ]
+  },
+  runtimeConfig: {
+    gmailUser: process.env.NUXT_GMAIL_USER,
+    gmailPass: process.env.NUXT_GMAIL_PASS
   }
 });

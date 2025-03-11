@@ -18,6 +18,7 @@
         <Slider />
         
         <Menu />
+        <Form/>
       </div>
     </transition>
   </div>
