@@ -20,10 +20,15 @@
 
       <!-- View Menu Button -->
       <NuxtLink
-        to="/ourMenu"
-        class="bg-blue-500 text-white py-2 px-4 md:py-3 md:px-6 text-lg md:text-2xl tracking-wide mt-4 rounded-lg"
-        >VIEW MENU</NuxtLink
-      >
+  to="/ourMenu"
+  class="flex items-center gap-3 bg-gradient-to-r from-blue-500 to-blue-700 
+         text-white py-3 px-6 md:py-4 md:px-8 text-lg md:text-xl font-semibold
+         rounded-full shadow-lg transition-transform transform 
+         hover:scale-105 hover:shadow-xl duration-300 ease-in-out"
+>
+  <i class="fas fa-utensils"></i> View Menu
+</NuxtLink>
+
 
       <!-- Favorite Heading -->
       <h1
