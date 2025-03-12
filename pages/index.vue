@@ -13,9 +13,11 @@
     <transition name="fade-content">
       <div v-if="!showLogo" class="main-content">
         <Hero />
-        <About />
         <Ingredients/>
+       
+       
         <Slider />
+        <About />
         
         <Menu />
         <Form/>

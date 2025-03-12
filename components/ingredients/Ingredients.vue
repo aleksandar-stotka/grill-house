@@ -1,10 +1,8 @@
 <template>
-  <div class="flex justify-center p-5">
+  <div ref="sectionRef" class="flex justify-center p-5">
     <!-- Left Side -->
     <div class="w-full lg:w-2/4 flex flex-col items-center">
-      <h1
-        class="font-bold text-3xl md:text-3xl lg:text-5xl leading-tight text-center"
-      >
+      <h1 class="font-bold text-3xl md:text-3xl lg:text-5xl leading-tight text-center">
         Best Quality <br />
         Ingredients
       </h1>
@@ -18,38 +16,37 @@
         />
       </div>
 
-      <!-- View Menu Button -->
+      <!-- View Menu Button with Scroll Effect -->
       <NuxtLink
   to="/ourMenu"
-  class="flex items-center gap-3 bg-gradient-to-r from-blue-500 to-blue-700 
-         text-white py-3 px-6 md:py-4 md:px-8 text-lg md:text-xl font-semibold
-         rounded-full shadow-lg transition-transform transform 
-         hover:scale-105 hover:shadow-xl duration-300 ease-in-out"
+  class="bg-green-500 text-white py-4 px-10 md:py-5 md:px-12 text-lg md:text-2xl 
+         font-semibold rounded-lg shadow-lg transition-transform duration-1000 flex items-center space-x-3"
+  :class="{ 'scale-150': isVisible }"
 >
-  <i class="fas fa-utensils"></i> View Menu
+  <i class="fas fa-utensils"></i> 
+  <span>VIEW MENU</span>
 </NuxtLink>
 
 
+
       <!-- Favorite Heading -->
-      <h1
-        class="font-bold text-2xl md:text-4xl lg:text-5xl mt-6 text-center p-3"
-      >
+      <h1 class="font-bold text-2xl md:text-4xl lg:text-5xl mt-6 text-center p-3">
         Customers Favorite
       </h1>
     </div>
-
-    <!-- Right Side (You can fill this with additional content if needed) -->
   </div>
 </template>
-  
-  <script setup>
+
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
 import { useNuxtApp } from "#imports";
 import { GET_INGREDIANTS } from "~/apollo/mainMenu/ingredientsQueries";
 import { globals } from "#imports";
-import { ref, onMounted } from "vue";
 
 const apiBaseUrl = globals.apiUrl;
 const ingData = ref([]);
+const sectionRef = ref(null);
+const isVisible = ref(false);
 
 onMounted(async () => {
   try {
@@ -60,16 +57,31 @@ onMounted(async () => {
   } catch (err) {
     console.error(err);
   }
+
+  // Observe scrolling into view
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      isVisible.value = true;
+      setTimeout(() => { isVisible.value = false; }, 1000); // Reset after 1 sec
+    }
+  }, { threshold: 0.5 });
+
+  if (sectionRef.value) {
+    observer.observe(sectionRef.value);
+  }
+
+  onUnmounted(() => {
+    if (sectionRef.value) observer.unobserve(sectionRef.value);
+  });
 });
 
 const getImageUrl = (path) => {
   return path?.startsWith("http") ? path : `${apiBaseUrl}${path}`;
 };
-
-
 </script>
-  
-  <style>
-/* Add custom styles here if needed */
+
+<style scoped>
+.scale-125 {
+  transform: scale(1.25);
+}
 </style>
-  
