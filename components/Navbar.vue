@@ -4,7 +4,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16">
         <div class="flex items-center">
-          <img src="../assets/logo.jpg" alt="Savory Bites Logo" class="h-20 rounded-xl">
+          <NuxtLink to="/">
+            <img src="../assets/logo.jpg" alt="Savory Bites Logo" class="h-20 rounded-xl">
+
+          </NuxtLink>
           <h2 class="text-orange-500 p-2 text-2xl font-bold" style="font-family: 'Poppins', sans-serif;">
             Skara <span class="text-green-500">House</span>
           </h2>
