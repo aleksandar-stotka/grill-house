@@ -13,6 +13,18 @@
           SUBMIT
         </button>
       </form>
+      
+      <!-- Centered View More Button with Padding -->
+      <div class="flex justify-center mt-4">
+        <NuxtLink 
+          to="/contact" 
+          class="px-6 py-3 text-white bg-green-600 rounded-lg shadow-md 
+                 hover:bg-green-700 transition duration-300 ease-in-out 
+                 text-lg font-semibold tracking-wide inline-block"
+        >
+          VIEW MORE
+        </NuxtLink>
+      </div>
     </div>
   </div>
 </template>
