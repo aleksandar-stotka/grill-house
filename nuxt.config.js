@@ -3,7 +3,7 @@ export default defineNuxtConfig({
     public: {
       public: {
         graphqlEndpoint: process.env.NUXT_PUBLIC_GRAPHQL_URL || 'https://api.mygrillhouse.com/graphql', // Ensure this is the correct endpoint
-        API_URL: process.env.NUXT_PUBLIC_API_URL || 'https://mygrillhouse.netlify.app', // Ensure this is the correct frontend URL
+        API_URL: process.env.NUXT_PUBLIC_API_URL || 'https://skara-house-itj3m.ondigitalocean.app', // Ensure this is the correct frontend URL
       }
     },
   },
