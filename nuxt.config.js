@@ -10,6 +10,11 @@ export default defineNuxtConfig({
   plugins: [
     '~/plugins/apollo.client.js',
   ],
+  target: 'static',
+  generate: {
+    fallback: '404.html' // Fixes 404 on reload
+
+  },
   modules: ['@nuxtjs/tailwindcss'],
   css: [
     '@/assets/css/main.css',
