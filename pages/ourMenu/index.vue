@@ -19,7 +19,7 @@
           <h2 class="text-2xl font-black text-orange-500 transition-colors duration-300 group-hover:text-white uppercase">
             {{ burger.productname }}
           </h2>
-          <p class="mt-2 text-gray-400 text-sm transition-colors duration-300 group-hover:text-white">
+          <p class="mt-2 text-white-300 text-sm transition-colors duration-300 group-hover:text-white">
             {{ burger.grildescription }}
           </p>
           <p class="mt-3 text-lg font-bold text-orange-500 transition-colors duration-300 group-hover:text-white">
