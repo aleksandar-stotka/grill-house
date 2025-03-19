@@ -3,11 +3,11 @@ export default defineNuxtConfig({
     public: {
       public: {
         graphqlEndpoint: process.env.NUXT_PUBLIC_GRAPHQL_URL || 'https://api.mygrillhouse.com/graphql', // Ensure this is the correct endpoint
-        API_URL: process.env.NUXT_PUBLIC_API_URL || 'https://skara-house-itj3m.ondigitalocean.app', // Ensure this is the correct frontend URL
+        API_URL: process.env.NUXT_PUBLIC_API_URL || 'https://skara-house-itj3m.ondigitalocean.app/', // Ensure this is the correct frontend URL
       }
     },
   },
-   output: 'static',
+   
   plugins: [
     '~/plugins/apollo.client.js',
   ],
@@ -20,8 +20,9 @@ export default defineNuxtConfig({
   css: [
     '@/assets/css/main.css',
   ],
+  output: 'static',
   experimental: {
-    payloadExtraction: false // Ensures full static payloads are generated
+    payloadExtraction: false
   },
   nitro: {
     prerender: {
