@@ -7,6 +7,7 @@ export default defineNuxtConfig({
       }
     },
   },
+   output: 'static',
   plugins: [
     '~/plugins/apollo.client.js',
   ],
@@ -19,6 +20,17 @@ export default defineNuxtConfig({
   css: [
     '@/assets/css/main.css',
   ],
+  experimental: {
+    payloadExtraction: false // Ensures full static payloads are generated
+  },
+  nitro: {
+    prerender: {
+      routes: ['/'] // Make sure the home page is included
+    }
+  },
+  routeRules: {
+    '/**': { ssr: false } // Force Nuxt to behave like an SPA
+  },
   pageTransition: {
     name: 'page', // Name of the transition
     mode: 'out-in', // This ensures that the outgoing page fades out before the new page fades in
