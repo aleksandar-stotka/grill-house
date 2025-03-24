@@ -1,8 +1,9 @@
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
-      graphqlEndpoint: process.env.NUXT_PUBLIC_GRAPHQL_URL || 'https://api.mygrillhouse.com/graphql', 
-      API_URL: process.env.NUXT_PUBLIC_API_URL || 'https://skara-house-itj3m.ondigitalocean.app',
+      public: {
+        SITE_URL: process.env.NUXT_PUBLIC_SITE_URL || 'https://skara-house.com'
+      }
     },
     gmailUser: process.env.NUXT_GMAIL_USER,
     gmailPass: process.env.NUXT_GMAIL_PASS
