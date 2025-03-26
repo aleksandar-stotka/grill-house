@@ -9,6 +9,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "start": "node .output/server/index.mjs"
+
   },
   "dependencies": {
     "@apollo/client": "^3.13.0",
