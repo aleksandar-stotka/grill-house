@@ -8,7 +8,7 @@
         <p><strong>Shop Location:</strong><br>17 Beltana Avenue, Bonnyrigg, NSW 2177</p>
         <p>
           Call us now: 
-          <a href="tel:0419 024 034">0419 024 034</a>, 
+          <a href="tel:0419 024 034">0419 024 034</a>
           <a href="tel:0405 130 887">0405 130 887</a>
         </p>
         <p><strong>Email Address:</strong><br>skarahouse01@gmail.com</p>
