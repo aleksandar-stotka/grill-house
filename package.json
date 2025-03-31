@@ -8,12 +8,12 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-<<<<<<< HEAD
+
     "start": "node .output/server/index.mjs"
 
-=======
-    "start": "nuxt start" 
->>>>>>> 515513e (Update Nuxt app)
+
+  
+
   },
   "dependencies": {
     "@apollo/client": "^3.13.0",
