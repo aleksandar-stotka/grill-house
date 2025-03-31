@@ -14,7 +14,11 @@
           allowedHosts: ['www.skara-house.com']
         }
       },
+<<<<<<< HEAD
       
+=======
+    
+>>>>>>> 515513e (Update Nuxt app)
     plugins: [
       '~/plugins/apollo.client.js',
     ],
@@ -61,3 +65,8 @@
       gmailPass: process.env.NUXT_GMAIL_PASS
     }
   });
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 515513e (Update Nuxt app)
