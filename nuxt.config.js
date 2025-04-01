@@ -19,6 +19,7 @@ export default defineNuxtConfig({
   ],
 
   target: 'static',
+
   generate: {
     fallback: '404.html' // Fixes 404 on reload
   },
@@ -46,7 +47,7 @@ export default defineNuxtConfig({
     prerender: {
       routes: ['/'] // Make sure the home page is included
     }
-  }
+  },
+
+  compatibilityDate: '2025-04-01'
 });
-
-

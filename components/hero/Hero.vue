@@ -3,8 +3,9 @@
     <!-- Text Content -->
     <div class="relative z-10 text-center md:text-left">
       <h1 class="text-4xl md:text-5xl font-extrabold text-black">
-        {{ heroes[0]?.Grill }}  
-        <span class="text-orange-500">{{ heroes[0]?.skarahouse }}</span>
+        Delight in Every Bite <br>
+        at 
+        <span class="text-orange-500">Skara House</span>
       </h1>
 
       <!-- Iterate over the description (structured text) -->
@@ -37,9 +38,9 @@
     </div>
 
     <!-- Photo (on right side for larger screens) -->
-    <div v-if="heroes.length" class="relative flex justify-center">
+    <div>
       <img 
-        :src="getImageUrl(heroes[0].heroImage?.url)" 
+        src="/assets/bbq.png"  
         alt="Hero Image"
         class="w-full max-w-[450px] h-auto rounded-lg shadow-lg md:max-w-[500px]"
       />
