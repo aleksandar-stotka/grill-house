@@ -4,7 +4,7 @@
     <div class="text-center text-orange-600 text-5xl font-extrabold tracking-wide uppercase">
       SKARA<span class="block text-red-700">HOUSE</span>
     </div>
-    <div class="text-right text-white text-sm mt-2">OPEN 11AM - 9PM <br> WE CATER!</div>
+    <div class="text-right text-white text-sm mt-2">OPEN 11AM - 9PM <br> WEeee CATER!</div>
     
     <!-- Menu Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
