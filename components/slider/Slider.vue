@@ -1,17 +1,21 @@
 <template>
-  <div v-if="slides.length > 0" class="relative w-full max-w-7xl mx-auto overflow-hidden">
+  <div  class="relative w-full max-w-7xl mx-auto overflow-hidden">
     <div 
       class="flex transition-transform duration-300 ease-in-out"
       :style="{ transform: `translateX(-${currentIndex * (100 / visibleCount)}%)` }"
     >
-      <div v-for="(slide, index) in slides" :key="index"
-           class="flex-shrink-0 p-6"
-           :style="{ flex: `0 0 ${100 / visibleCount}%` }">
-        <img :src="getImageUrl(slide.cardimage?.url) || '/path/to/fallback-image.jpg'"
+      <!-- Loop through slides -->
+      <div 
+        v-for="(slide, index) in slides" 
+        :key="index"
+        class="flex-shrink-0 p-6"
+        :style="{ flex: `0 0 ${100 / visibleCount}%` }"
+      >
+        <img :src="slide.image"
              class="w-full h-auto max-h-96 object-cover rounded-lg shadow-lg"
              alt="Slide Image">
         <div class="text-center mt-2">
-          <h3 class="text-2xl font-bold text-green-700">{{ slide.cardtext }}</h3>
+          <h3 class="text-2xl font-bold text-green-700">{{ slide.title }}</h3>
         </div>
       </div>
     </div>
@@ -28,54 +32,46 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
-import { useNuxtApp } from '#imports';
-import { GET_SLIDES } from '~/apollo/slidermenu/sliderQueries';
-import { globals } from '#imports';
+import { menu } from '~/data/data';
 
-const slides = ref([]);
+// Use local data from data.js
+const slides = ref(menu);
 const currentIndex = ref(0);
 const visibleCount = ref(4);
-const apiBaseUrl = globals.apiUrl;
 
-const getImageUrl = (path) => {
-  return path?.startsWith('http') ? path : `${apiBaseUrl}${path}`;
-};
-
-// Update visible count based on screen size
+// Function to update the number of visible slides based on screen width
 const updateVisibleCount = () => {
   visibleCount.value = window.innerWidth < 640 ? 1 : 4;
 };
 
+// Move to the next slide
 const next = () => {
   if (currentIndex.value < slides.value.length - visibleCount.value) {
     currentIndex.value++;
   } else {
-    currentIndex.value = 0; // Reset to avoid empty space
+    currentIndex.value = 0; // Reset to the beginning to avoid empty space
   }
 };
 
+// Move to the previous slide
 const prev = () => {
   if (currentIndex.value > 0) {
     currentIndex.value--;
   } else {
-    currentIndex.value = slides.value.length - visibleCount.value; // Avoid empty space
+    currentIndex.value = slides.value.length - visibleCount.value; // Jump to the last set of slides
   }
 };
 
-onMounted(async () => {
+onMounted(() => {
   updateVisibleCount();
-  try {
-    const { data } = await useNuxtApp().$apolloClient.query({ query: GET_SLIDES });
-    slides.value = data.sliders;
-  } catch (error) {
-    console.error("Error fetching slides:", error);
-  }
-  
   window.addEventListener('resize', updateVisibleCount);
-  setInterval(next, 2000);
-});
+  // Auto-advance the slider every 2 seconds
+  const intervalId = setInterval(next, 2000);
 
-onUnmounted(() => {
-  window.removeEventListener('resize', updateVisibleCount);
+  // Cleanup the interval on unmount
+  onUnmounted(() => {
+    window.removeEventListener('resize', updateVisibleCount);
+    clearInterval(intervalId);
+  });
 });
 </script>

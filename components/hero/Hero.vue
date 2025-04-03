@@ -34,7 +34,7 @@
     <!-- Photo (on right side for larger screens) -->
     <div>
       <img 
-        src="/public/menu/main-hero.jpg"
+        src="/main-hero.jpg"
         alt="Hero Image"
         class="w-full max-w-[450px] h-auto rounded-lg shadow-lg md:max-w-[500px]"
       />
