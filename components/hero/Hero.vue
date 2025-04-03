@@ -9,13 +9,7 @@
       </h1>
 
       <!-- Iterate over the description (structured text) -->
-      <div class="mt-4 text-gray-600 text-lg">
-        <div v-for="(block, index) in descriptionBlocks" :key="index">
-          <p v-for="(child, childIndex) in block.children" :key="childIndex">
-            {{ child.text }}
-          </p>
-        </div>
-      </div>
+      
 
       <div class="mt-6 flex items-center space-x-4 justify-center md:justify-start">
         <!-- Ingredients Icons -->
