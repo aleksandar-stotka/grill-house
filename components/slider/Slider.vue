@@ -1,5 +1,6 @@
 <template>
   <div  class="relative w-full max-w-7xl mx-auto overflow-hidden">
+    <h1 class="text-2xl" >Customer Favorites</h1>
     <div 
       class="flex transition-transform duration-300 ease-in-out"
       :style="{ transform: `translateX(-${currentIndex * (100 / visibleCount)}%)` }"

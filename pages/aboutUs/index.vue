@@ -1,9 +1,12 @@
 <template>
   <section class="relative w-full">
     <!-- Hero Image -->
-    <div class="w-full h-[250px] md:h-[300px] bg-cover bg-center" 
-         :style="{ backgroundImage: heroImage ? `url(${heroImage})` : 'none' }">
-      <div class="w-full h-full flex items-center justify-center bg-opacity-50">
+    <div 
+      class="w-full h-[250px] md:h-[300px] bg-cover bg-center relative"
+      style="background-image: url('about.jpg');"
+    >
+      <!-- Overlay and Text -->
+      <div class="w-full h-full flex items-center justify-center bg-black bg-opacity-50">
         <h2 class="text-3xl md:text-5xl font-extrabold text-green-500 text-left">ABOUT US</h2>
       </div>
     </div>
@@ -13,10 +16,11 @@
         <!-- Image Section -->
         <div class="w-full lg:w-1/2 flex justify-center">
           <h1>{{ aboutusData[0]?.text }}</h1>
-          <img v-if="aboutusData.length > 0" 
-               :src="getImageUrl(aboutusData[0].burgerphoto.url)" 
-               alt="Deconstructed Burger" 
-               class="w-full max-w-xs md:max-w-md">
+          <img
+          src="/public/menu-main-2.jpg.webp"
+          alt="Delicious Ingredients"
+          class="w-full max-w-lg lg:max-w-xl rounded-lg shadow-xl"
+        />
         </div>
         
         <!-- Text Content -->
@@ -34,13 +38,13 @@
           </ul>
           <!-- Owner Info -->
           <div class="mt-4 md:mt-6 flex items-center gap-3 md:gap-4">
-            <img v-if="aboutusData.length > 0" 
-                 :src="getImageUrl(aboutusData[0].ownerphoto.url)" 
+            <img  
+                 src="/assets/family.jpg"
                  alt="Owner" 
                  class="w-10 h-10 md:w-12 md:h-12 rounded-full">
             <div>
               <p class="text-gray-900 font-bold text-sm md:text-base">
-                {{ aboutusData.length > 0 ? aboutusData[0].ownername : 'ETHAN RODRIGUEZ' }}
+             Dimovksi Family
               </p>
               <p class="text-pink-600 text-xs md:text-sm">CEO - Owner</p>
             </div>

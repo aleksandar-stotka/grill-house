@@ -9,7 +9,7 @@
 
           </NuxtLink>
           <h2 class="text-orange-500  text-2xl font-bold" style="font-family: 'Poppins', sans-serif;">
-            kara <span class="text-green-500">House</span>
+            Skara <span class="text-green-500">House</span>
           </h2>
         </div>
         <div class="hidden md:flex space-x-6 items-center text-black font-semibold" style="font-family: 'Poppins', sans-serif;">

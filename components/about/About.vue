@@ -6,7 +6,7 @@
       <!-- Image Section -->
       <!-- Image Section -->
       <img
-        :src="getImageUrl(aboutData[0]?.aboutusImage[0]?.url)"
+        src="/assets/about-img-1.png"
         alt="About"
         class="w-full h-auto "
       />
@@ -27,9 +27,16 @@
         <!-- Description -->
 <div class="mt-4 text-gray-600 text-2xl
 ">
-  <div v-for="(block, index) in descriptionBlocks" :key="index">
-    <p v-for="(child, childIndex) in block.children" :key="childIndex">
-      {{ child.text }}
+  <div>
+    <p >
+      Skara House is a family-owned food truck
+specializing in authentic European barbecue,
+bringing traditional flavors to New South
+Wales through high-quality, mobile dining.
+With years of culinary experience, Skara
+House offers an exciting and culturally rich
+dining experience that aims to connect
+communities through food.
     </p>
   </div>
 </div>
@@ -49,39 +56,16 @@
   </section>
 </template>
   <script setup>
-import { globals } from "#imports";
-import { onMounted, ref } from "#imports";
-import { useNuxtApp } from "#imports";
-import { GET_ABOUT } from "~/apollo/about/aboutQueries";
-console.log(globals);
-
-const apiBaseUrl = globals.apiUrl;
-
-const aboutData = ref([]);
-const descriptionBlocks = ref([]);
 
 
-onMounted(async () => {
-  try {
-    const { data } = await useNuxtApp().$apolloClient.query({
-      query: GET_ABOUT,
-    });
-
-    aboutData.value = data.heroes;
-    
-    // Fix: Correctly assign the descriptionAbout
-    descriptionBlocks.value = aboutData.value[0]?.descriptionAbout || [];
-
-    console.log(aboutData.value, "about");
-  } catch (err) {
-    console.error("Error fetching About data:", err);
-  }
-});
 
 
-const getImageUrl = (path) => {
-  return path?.startsWith("http") ? path : `${apiBaseUrl}${path}`;
-};
+
+
+
+
+
+
 </script>
   
   <style scoped>

@@ -1,6 +1,13 @@
 <template>
   <div class="max-w-7xl mx-auto px-6 lg:px-12 py-12">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div class="relative flex justify-center">
+        <img
+          src="/public/menu-main-2.jpg.webp"
+          alt="Delicious Ingredients"
+          class="w-full max-w-lg lg:max-w-xl rounded-lg shadow-xl"
+        />
+      </div>
       <!-- Left Side Text Content -->
       <div class="space-y-6 text-center lg:text-left">
         <h1 class="text-4xl lg:text-6xl font-bold leading-tight">
@@ -21,13 +28,7 @@
       </div>
 
       <!-- Right Side Hero Image -->
-      <div class="relative flex justify-center">
-        <img
-          src="/assets/menu-main.jpg"
-          alt="Delicious Ingredients"
-          class="w-full max-w-lg lg:max-w-xl rounded-lg shadow-xl"
-        />
-      </div>
+     
     </div>
 
     <!-- Features Section (Like in Screenshot) -->

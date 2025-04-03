@@ -19,7 +19,7 @@
         <Slider />
         <About />
         
-        <Menu />
+      
         <Form/>
       </div>
     </transition>
