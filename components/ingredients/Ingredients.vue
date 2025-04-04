@@ -19,12 +19,13 @@
         </p>
         <!-- View Menu Button -->
         <NuxtLink
-          to="/ourMenu"
-          class="bg-green-600 hover:bg-green-700 text-white py-4 px-8 text-lg font-semibold rounded-lg shadow-lg inline-block transition-all duration-300 transform"
-          :class="{ 'scale-110': isVisible }"
-        >
-          VIEW MENU
-        </NuxtLink>
+    to="/ourMenu"
+    class="bg-green-600 hover:bg-green-700 text-white py-4 px-8 text-lg font-semibold rounded-lg shadow-lg inline-block transition-all duration-300 transform"
+    :class="{ 'scale-110': isVisible }"
+    ref="menuButton"
+  >
+    VIEW MENU
+  </NuxtLink>
       </div>
 
       <!-- Right Side Hero Image -->
@@ -34,7 +35,7 @@
     <!-- Features Section (Like in Screenshot) -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 text-center">
       <div class="space-y-3">
-        <h3 class="text-orange-600 font-bold text-xl">ARTISAN BUNS</h3>
+        <h3 class="text-orange-400 font-bold text-xl">ARTISAN BUNS</h3>
         <p class=" text-xl text-white"> Made Locally</p>
       </div>
     
@@ -43,7 +44,7 @@
         <p class="text-xl text-white">Made Fresh Everyday <br /> Hand-Tossed</p>
       </div>
       <div class="space-y-3">
-        <h3 class="text-red-600 font-bold text-xl">GROUND MACEDONIAN</h3>
+        <h3 class="text-red-400 font-bold text-xl">GROUND MACEDONIAN</h3>
         <p class="text-xl text-white">Ground Fresh <br /> traditional Macedonian grill</p>
       </div>
     </div>
@@ -68,6 +69,7 @@ onMounted(() => {
     { threshold: 0.5 }
   );
 
+  
   const section = document.querySelector('.max-w-7xl');
   if (section) observer.observe(section);
 

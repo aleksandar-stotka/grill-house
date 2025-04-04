@@ -10,12 +10,14 @@
             kara <span class="text-green-500">House</span>
           </h2>
         </div>
-        <div class="hidden md:flex space-x-6 items-center font-bold" :class="{'text-white': isScrolled, 'text-gray-900': !isScrolled}" style="font-family: 'Poppins', sans-serif;">
+        <div class="hidden md:flex space-x-6 items-center" style="font-family: 'Poppins', sans-serif;">
           <NuxtLink v-for="(link, index) in links" :key="index" :to="link.to"
             :class="{
-              'hover:text-green-500': isScrolled,
-              'hover:text-orange-500': !isScrolled
+              'text-white': isScrolled, 
+              'text-orange-600': !isScrolled, 
+              'hover:text-orange-500': activeLink !== link.name
             }"
+            @click="setActiveLink(link.name)"
             class="px-3 py-2 rounded-md text-xl transition duration-300">
             {{ link.name }}
           </NuxtLink>
@@ -38,10 +40,11 @@
       <div class="px-2 pt-2 pb-3 space-y-1">
         <NuxtLink v-for="(link, index) in links" :key="index" :to="link.to"
           :class="{
-            'hover:text-green-500': isScrolled,
-            'hover:text-orange-500': !isScrolled
+            'text-orange-600': isMobileMenuOpen,  // When mobile menu is open, text is orange
+            'text-white': !isMobileMenuOpen, // When mobile menu is closed, text is white
+            'hover:text-orange-500': activeLink !== link.name
           }"
-          @click="isMobileMenuOpen = false"
+          @click="setActiveLink(link.name); isMobileMenuOpen = false"
           class="block px-3 py-2 rounded-md text-xl">
           {{ link.name }}
         </NuxtLink>
@@ -60,8 +63,13 @@ const links = ref([
   { name: 'ABOUT US', to: '/aboutUs' }
 ]);
 
+const activeLink = ref('HOME');
 const isMobileMenuOpen = ref(false);
 const isScrolled = ref(false);
+
+const setActiveLink = (name) => {
+  activeLink.value = name;
+};
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 10; // Change 10 to the scroll position you prefer

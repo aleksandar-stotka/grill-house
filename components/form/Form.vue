@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-cream p-8 flex justify-center items-center min-h-screen">
+  <div class="bg-green-400 p-8 flex justify-center items-center min-h-screen">
     <!-- Slightly Bigger Centered Form -->
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-lg">
       <h2 class="text-2xl font-bold text-pink-700 mb-6 text-center">CUSTOMER SUPPORT</h2>
