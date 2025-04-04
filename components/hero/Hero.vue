@@ -75,38 +75,17 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
-import { useNuxtApp } from "#app";
-import { GET_HERO } from "~/apollo/heroQueries";
-import { globals } from "~/utils/globals";
 
-const heroes = ref([]);
-const descriptionBlocks = ref([]);
-const error = ref(null);
-const loading = ref(true);
+
 
 // Use the global API URL
 const apiBaseUrl = globals.apiUrl;
 
 // Fetch data from GraphQL server using Apollo Client
-onMounted(async () => {
-  try {
-    const { data } = await useNuxtApp().$apolloClient.query({
-      query: GET_HERO,
-    });
-    heroes.value = data.heroes;
-    descriptionBlocks.value = data.heroes[0].description || []; // Assuming the description is in the first hero
-    loading.value = false;
-  } catch (err) {
-    error.value = err;
-    console.error("GraphQL Error:", error.value);
-  }
-});
+
 
 // Helper function to construct image URLs safely
-const getImageUrl = (path) => {
-  return path?.startsWith("http") ? path : `${apiBaseUrl}${path}`;
-};
+
 </script>
 
 <style scoped>
