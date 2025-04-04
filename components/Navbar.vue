@@ -10,7 +10,7 @@
             kara <span class="text-green-500">House</span>
           </h2>
         </div>
-        <div class="hidden md:flex space-x-6 items-center" :class="{'text-white': isScrolled, 'text-gray-900': !isScrolled}" style="font-family: 'Poppins', sans-serif;">
+        <div class="hidden md:flex space-x-6 items-center font-bold" :class="{'text-white': isScrolled, 'text-gray-900': !isScrolled}" style="font-family: 'Poppins', sans-serif;">
           <NuxtLink v-for="(link, index) in links" :key="index" :to="link.to"
             :class="{
               'hover:text-green-500': isScrolled,

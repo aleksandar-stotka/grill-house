@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black text-white min-h-screen p-10">
+  <div class="bg-black text-white min-h-screen p-10 pt-16 mt-8">
     <!-- Header -->
     <div class="text-center text-orange-600 text-5xl font-extrabold tracking-wide uppercase">
       SKARA<span class="block text-red-700">HOUSE</span>
@@ -32,11 +32,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
 import { menu } from '~/data/data';
 
 
-const menuData = ref(menu);
 </script>
 
 <style scoped>
