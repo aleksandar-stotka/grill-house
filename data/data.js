@@ -46,7 +46,7 @@ export const menu = [
       desc: "Lettuce, bacon, cheese, fried egg, caesar sauce and croutons"
     },
     {
-      image: "/Patato.jpg",
+      image: "/patato.jpg",
       title: "Sweet Potato Fries",
       price: 8,
       desc: "Sweet Potato Fries"
