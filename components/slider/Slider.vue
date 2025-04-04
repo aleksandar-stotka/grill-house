@@ -1,6 +1,6 @@
 <template>
-  <div  class="relative w-full max-w-7xl mx-auto overflow-hidden">
-    <h1 class="text-2xl" >Customer Favorites</h1>
+  <div  class="relative w-full max-w-7xl mx-auto overflow-hidden text-center">
+    <h1 class="text-3xl p-5 font-bold text-white" >Customer Favorites</h1>
     <div 
       class="flex transition-transform duration-300 ease-in-out"
       :style="{ transform: `translateX(-${currentIndex * (100 / visibleCount)}%)` }"
@@ -16,7 +16,7 @@
              class="w-full h-auto max-h-96 object-cover rounded-lg shadow-lg"
              alt="Slide Image">
         <div class="text-center mt-2">
-          <h3 class="text-2xl font-bold text-green-700">{{ slide.title }}</h3>
+          <h3 class="text-2xl font-bold text-green-300">{{ slide.title }}</h3>
         </div>
       </div>
     </div>

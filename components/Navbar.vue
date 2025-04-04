@@ -1,22 +1,20 @@
-
 <template>
-  <nav>
+  <nav class="bg-white shadow-lg fixed top-0 left-0 w-full z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16">
         <div class="flex items-center">
           <NuxtLink to="/">
-            <img src="../assets/logo.jpg" alt="Savory Bites Logo" class="h-20 rounded-xl">
-
+            <img src="../assets/logo.jpg" alt="Savory Bites Logo" class="h-24 rounded-xl">
           </NuxtLink>
-          <h2 class="text-orange-500  text-2xl font-bold" style="font-family: 'Poppins', sans-serif;">
-            Skara <span class="text-green-500">House</span>
+          <h2 class="text-orange-600 text-3xl font-bold ml-4" style="font-family: 'Poppins', sans-serif;">
+            kara <span class="text-green-500">House</span>
           </h2>
         </div>
-        <div class="hidden md:flex space-x-6 items-center text-black font-semibold" style="font-family: 'Poppins', sans-serif;">
+        <div class="hidden md:flex space-x-6 items-center text-gray-900 font-semibold" style="font-family: 'Poppins', sans-serif;">
           <NuxtLink v-for="(link, index) in links" :key="index" :to="link.to"
-            :class="{'text-orange-500': activeLink === link.name, 'hover:text-orange-400': activeLink !== link.name}"
+            :class="{'text-orange-600': activeLink === link.name, 'hover:text-orange-500': activeLink !== link.name}"
             @click="setActiveLink(link.name)"
-            class="px-3 py-2 rounded-md text-lg">
+            class="px-3 py-2 rounded-md text-xl transition duration-300">
             {{ link.name }}
           </NuxtLink>
         </div>
@@ -37,9 +35,9 @@
     <div v-if="isMobileMenuOpen" class="md:hidden bg-white shadow-md">
       <div class="px-2 pt-2 pb-3 space-y-1">
         <NuxtLink v-for="(link, index) in links" :key="index" :to="link.to"
-          :class="{'text-orange-500': activeLink === link.name, 'hover:text-orange-400': activeLink !== link.name}"
+          :class="{'text-orange-600': activeLink === link.name, 'hover:text-orange-500': activeLink !== link.name}"
           @click="setActiveLink(link.name); isMobileMenuOpen = false"
-          class="block px-3 py-2 rounded-md text-lg">
+          class="block px-3 py-2 rounded-md text-xl">
           {{ link.name }}
         </NuxtLink>
       </div>
@@ -53,7 +51,8 @@ import { ref } from 'vue';
 const links = ref([
   { name: 'HOME', to: '/' },
   { name: 'MENU', to: '/ourMenu' },
-  { name: 'CONTACT US', to: '/contact' }
+  { name: 'CONTACT US', to: '/contact' },
+  { name: 'ABOUT US', to: '/aboutUs' }
 ]);
 
 const activeLink = ref('HOME');

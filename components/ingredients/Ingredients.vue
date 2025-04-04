@@ -3,18 +3,18 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
       <div class="relative flex justify-center">
         <img
-          src="/public/menu-main-2.jpg.webp"
+          src="/public/menu-d.webp"
           alt="Delicious Ingredients"
           class="w-full max-w-lg lg:max-w-xl rounded-lg shadow-xl"
         />
       </div>
       <!-- Left Side Text Content -->
       <div class="space-y-6 text-center lg:text-left">
-        <h1 class="text-4xl lg:text-6xl font-bold leading-tight">
+        <h1 class="text-4xl lg:text-6xl font-bold leading-tight text-white">
           Best Quality <br />
           <span class="text-green-600">Ingredients</span>
         </h1>
-        <p class="text-gray-600 text-lg">
+        <p class="text-gray-200 text-lg">
           We use only the freshest and highest-quality ingredients to craft our delicious meals.
         </p>
         <!-- View Menu Button -->
@@ -35,19 +35,16 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 text-center">
       <div class="space-y-3">
         <h3 class="text-orange-600 font-bold text-xl">ARTISAN BUNS</h3>
-        <p class="text-gray-600">Available Gluten-Free <br /> Made Locally</p>
+        <p class=" text-xl text-white"> Made Locally</p>
       </div>
-      <div class="space-y-3">
-        <h3 class="text-green-600 font-bold text-xl">GROUND BEEF</h3>
-        <p class="text-gray-600">Signature Blended Beef <br /> Never Frozen</p>
-      </div>
+    
       <div class="space-y-3">
         <h3 class="text-green-500 font-bold text-xl">FRESH PRODUCE</h3>
-        <p class="text-gray-600">Made Fresh Everyday <br /> Hand-Tossed</p>
+        <p class="text-xl text-white">Made Fresh Everyday <br /> Hand-Tossed</p>
       </div>
       <div class="space-y-3">
         <h3 class="text-red-600 font-bold text-xl">GROUND MACEDONIAN</h3>
-        <p class="text-gray-600">Ground Fresh <br /> traditional macedonian recipe</p>
+        <p class="text-xl text-white">Ground Fresh <br /> traditional Macedonian grill</p>
       </div>
     </div>
   </div>

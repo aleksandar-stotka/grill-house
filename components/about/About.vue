@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-[#fef7f2] py-16 px-6 md:px-12 lg:px-24">
+  <section class="py-16 px-6 md:px-12 lg:px-24">
     <div
       class="grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-7xl mx-auto"
     >
@@ -25,7 +25,7 @@
 
         <!-- Description -->
         <!-- Description -->
-<div class="mt-4 text-gray-600 text-2xl
+<div class="mt-4 text-white text-2xl
 ">
   <div>
     <p >

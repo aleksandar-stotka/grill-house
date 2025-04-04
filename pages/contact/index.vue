@@ -1,7 +1,7 @@
 <template>
   <div class="bg-cream p-8 grid grid-cols-1 md:grid-cols-2 gap-6">
     <!-- Contact Info -->
-    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+    <div class="bg-white p-8 mt-8 rounded-lg shadow-md flex flex-col"> <!-- Increased padding and margin-top -->
       <h2 class="text-xl font-bold text-green-700 mb-4">GET IN TOUCH WITH US</h2>
       <p class="text-gray-600 mb-4">Give us a call or drop by anytime, we endeavour to answer all enquiries within 24 hours.</p>
       <div class="space-y-3">
