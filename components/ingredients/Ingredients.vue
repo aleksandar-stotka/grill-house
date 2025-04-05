@@ -35,7 +35,7 @@
     <!-- Features Section (Like in Screenshot) -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 text-center">
       <div class="space-y-3">
-        <h3 class="text-orange-400 font-bold text-xl">ARTISAN BUNS</h3>
+        <h3 class="text-orange-400 font-bold text-xl">BAKLAVA & TULUMBI</h3>
         <p class=" text-xl text-white"> Made Locally</p>
       </div>
     

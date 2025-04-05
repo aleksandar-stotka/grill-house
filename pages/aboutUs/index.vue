@@ -70,7 +70,7 @@
             />
             <div>
               <p class="text-gray-900 font-bold text-sm md:text-base">
-                Dimovksi Family
+                Dimovski Family
               </p>
               <p class="text-pink-600 text-xs md:text-sm">CEO - Owner</p>
             </div>
