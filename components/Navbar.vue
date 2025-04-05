@@ -7,7 +7,7 @@
             <img src="../assets/logo.jpg" alt="Savory Bites Logo" class="h-24 rounded-xl">
           </NuxtLink>
           <h2 :class="{'text-white': isScrolled, 'text-orange-600': !isScrolled}" class="text-3xl font-bold ml-4" style="font-family: 'Poppins', sans-serif;">
-            kara <span class="text-green-500">House</span>
+            Skara <span class="text-green-500">House</span>
           </h2>
         </div>
         <div class="hidden md:flex space-x-6 items-center" style="font-family: 'Poppins', sans-serif;">
